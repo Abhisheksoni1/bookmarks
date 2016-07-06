@@ -21,12 +21,12 @@ from django.core.urlresolvers import reverse_lazy
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'l&9@0q%05kue)rfee2s@i41x_(3@vy1pn)%h8lex10f*7vf3$@'
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
-LOGIN_URL = reverse_lazy('account:login')
-LOGOUT_URL = reverse_lazy('account:logout')
+LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
+LOGIN_URL = reverse_lazy('login')
+LOGOUT_URL = reverse_lazy('logout')
 ALLOWED_HOSTS = []
 
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions'
 
 )
 
@@ -104,3 +105,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
