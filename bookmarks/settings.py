@@ -21,13 +21,16 @@ from django.core.urlresolvers import reverse_lazy
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'l&9@0q%05kue)rfee2s@i41x_(3@vy1pn)%h8lex10f*7vf3$@'
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
 ALLOWED_HOSTS = []
+#for social authentication
 SOCIAL_AUTH_FACEBOOK_KEY = '1070590949655296' # Facebook App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = 'f9b77a0168eef8c2ed9f183d8277dfbc' # Facebook App Secret
 
