@@ -28,8 +28,15 @@ LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
 ALLOWED_HOSTS = []
+SOCIAL_AUTH_FACEBOOK_KEY = '1070590949655296' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'f9b77a0168eef8c2ed9f183d8277dfbc' # Facebook App Secret
 
-
+AUTHENTICATION_BACKENDS = (
+        'django.contrib.auth.backends.ModelBackend',
+        'account.authentication.EmailAuthBackend',
+        'social.backends.facebook.Facebook2OAuth2',
+        'social.backends.twitter.TwitterOAuth',
+)
 # Application definition
 
 INSTALLED_APPS = (
@@ -40,8 +47,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions'
-
+    'django_extensions',
+    'social.apps.django_app.default',
 )
 
 MIDDLEWARE_CLASSES = (
