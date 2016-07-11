@@ -34,11 +34,18 @@ ALLOWED_HOSTS = []
 SOCIAL_AUTH_FACEBOOK_KEY = '1070590949655296' # Facebook App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = 'f9b77a0168eef8c2ed9f183d8277dfbc' # Facebook App Secret
 
+SOCIAL_AUTH_TWITTER_KEY = ' tEtkA4mSH3NPKOp6pNumlYeOx' # Twitter Consumer Key
+SOCIAL_AUTH_TWITTER_SECRET = 'AxcY4bEzGxElSGsS0bO7YEqTEt2Wcz3dLydHh2yMdONB8Q27JP' # Twitter Consumer Secret
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ' 648962815028-s9fsccjm5o8n9be3qq02i1s89qj1cstb.apps.googleusercontent.com' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'wfOyN89YBfUfVnI7Diq71m1t' # Google Consumer Secret
+
 AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
         'account.authentication.EmailAuthBackend',
         'social.backends.facebook.Facebook2OAuth2',
         'social.backends.twitter.TwitterOAuth',
+        'social.backends.google.GoogleOAuth2',
 )
 # Application definition
 
@@ -52,6 +59,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_extensions',
     'social.apps.django_app.default',
+    'images',
 )
 
 MIDDLEWARE_CLASSES = (

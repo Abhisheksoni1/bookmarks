@@ -183,7 +183,7 @@ ul.messages li a.close {
 }
 .social li a {
     width:100%;
-    height:100%;
+    /*height:100%;*/
     display:block;
     color:#fff;
 }
