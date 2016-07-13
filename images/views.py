@@ -5,13 +5,10 @@ from .forms import ImageCreateForm
 from .models import Image
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
-<<<<<<< HEAD
 from common.decorators import ajax_required
 from django.http import HttpResponse
-from django.core.paginator import Paginator, EmptyPage, \
-                                PageNotAnInteger
-=======
->>>>>>> origin/master
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 @login_required
 def image_create(request):
@@ -31,11 +28,12 @@ def image_create(request):
     return render(request, 'images/image/create.html', {'section': 'images',
                                                         'form': form})
 
+
 def image_detail(request, id, slug):
     image = get_object_or_404(Image, id=id, slug=slug)
     return render(request, 'images/image/detail.html', {'section' : 'images',
-<<<<<<< HEAD
                                                         'image': image})
+
 
 @login_required
 def image_list(request):
@@ -62,15 +60,8 @@ def image_list(request):
                   {'section': 'images', 'images': images})
 
 
-
-
 @ajax_required
 @login_required
-=======
-                                                        'image' : image})
-
-@login_required
->>>>>>> origin/master
 @require_POST
 def image_like(request):
     image_id = request.POST.get('id')
