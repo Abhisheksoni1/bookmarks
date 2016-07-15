@@ -39,7 +39,9 @@ SOCIAL_AUTH_TWITTER_SECRET = 'AxcY4bEzGxElSGsS0bO7YEqTEt2Wcz3dLydHh2yMdONB8Q27JP
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ' 648962815028-s9fsccjm5o8n9be3qq02i1s89qj1cstb.apps.googleusercontent.com' # Google Consumer Key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'wfOyN89YBfUfVnI7Diq71m1t' # Google Consumer Secret
-
+ABSOLUTE_URL_OVERRIDES = {'auth.user': lambda u: reverse_lazy('user_detail',
+                                                              args=[u.username])}
+THUMBNAIL_DEBUG = True
 AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
         'account.authentication.EmailAuthBackend',
