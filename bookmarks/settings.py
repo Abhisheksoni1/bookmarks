@@ -16,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 from django.core.urlresolvers import reverse_lazy
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -30,24 +31,24 @@ LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
 ALLOWED_HOSTS = []
-#for social authentication
-SOCIAL_AUTH_FACEBOOK_KEY = '1070590949655296' # Facebook App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = 'f9b77a0168eef8c2ed9f183d8277dfbc' # Facebook App Secret
+# for social authentication
+SOCIAL_AUTH_FACEBOOK_KEY = '1070590949655296'  # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'f9b77a0168eef8c2ed9f183d8277dfbc'  # Facebook App Secret
 
-SOCIAL_AUTH_TWITTER_KEY = ' tEtkA4mSH3NPKOp6pNumlYeOx' # Twitter Consumer Key
-SOCIAL_AUTH_TWITTER_SECRET = 'AxcY4bEzGxElSGsS0bO7YEqTEt2Wcz3dLydHh2yMdONB8Q27JP' # Twitter Consumer Secret
+SOCIAL_AUTH_TWITTER_KEY = ' tEtkA4mSH3NPKOp6pNumlYeOx'  # Twitter Consumer Key
+SOCIAL_AUTH_TWITTER_SECRET = 'AxcY4bEzGxElSGsS0bO7YEqTEt2Wcz3dLydHh2yMdONB8Q27JP'  # Twitter Consumer Secret
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ' 648962815028-s9fsccjm5o8n9be3qq02i1s89qj1cstb.apps.googleusercontent.com' # Google Consumer Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'wfOyN89YBfUfVnI7Diq71m1t' # Google Consumer Secret
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ' 648962815028-s9fsccjm5o8n9be3qq02i1s89qj1cstb.apps.googleusercontent.com'  # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'wfOyN89YBfUfVnI7Diq71m1t'  # Google Consumer Secret
 ABSOLUTE_URL_OVERRIDES = {'auth.user': lambda u: reverse_lazy('user_detail',
                                                               args=[u.username])}
 THUMBNAIL_DEBUG = True
 AUTHENTICATION_BACKENDS = (
-        'django.contrib.auth.backends.ModelBackend',
-        'account.authentication.EmailAuthBackend',
-        'social.backends.facebook.Facebook2OAuth2',
-        'social.backends.twitter.TwitterOAuth',
-        'social.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+    'social.backends.facebook.Facebook2OAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'social.backends.google.GoogleOAuth2',
 )
 # Application definition
 
@@ -63,6 +64,7 @@ INSTALLED_APPS = (
     'social.apps.django_app.default',
     'images',
     'sorl.thumbnail',
+    'actions',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -96,7 +98,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bookmarks.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
@@ -106,7 +107,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -120,7 +120,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
